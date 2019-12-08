@@ -1,0 +1,24 @@
+%MP Problem 5
+
+%For x(n)
+n = 0:199;
+x = input('Enter x(n): ');plot(n,x,'-.ro');hold on;
+
+%For y(n), used FOR loop
+for z = 1:199
+    if z == 1
+        y = -1.5.*x(z) + 2.*x(z+1) - 0.5.*x(z+2);
+        plot(z,y,'*');
+    end
+    if z > 1 && z <= 199
+        y = 0.5.*x(z+1) - 0.5.*x(z-1);
+        plot(z,y,'*');
+    end
+    if z ==199    
+        y = 1.5.*x(z) - 2.*x(z-1) + 0.5.*x(z-2);
+        plot(z,y,'*');
+    end
+end
+
+%Adding Legends and other plot commands just for accuracy. 
+legend('x','y'); xlabel('x-axis'); ylabel('y-axis'); grid on; title('MP5')
